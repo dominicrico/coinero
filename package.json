@@ -1,0 +1,26 @@
+{
+  "name": "coinero",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/main.js",
+  "scripts": {
+    "start": "nf start -p 5000",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/electron-await-react",
+    "react-start": "react-scripts start"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rpc-websockets": "^4.0.0"
+  },
+  "devDependencies": {
+    "electron": "^1.8.2",
+    "foreman": "^2.0.0",
+    "react-scripts": "1.1.1"
+  },
+  "homepage": "./"
+}
