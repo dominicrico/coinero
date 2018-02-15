@@ -1,4 +1,5 @@
 import {Client} from 'rpc-websockets';
+
 const socket = new Client('wss://api.hitbtc.com/api/2/ws');
 
 let connectionOpen = false;

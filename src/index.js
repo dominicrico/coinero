@@ -1,8 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
-import App from './components/App/App';
-import registerServiceWorker from './registerServiceWorker';
+import {configureStore, history} from './store/configureStore';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import Root from './containers/Root';
+
+const store = configureStore();
+
+render(
+  <Root store={store} history={history} />,
+  document.getElementById('root')
+);
