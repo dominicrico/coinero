@@ -12,7 +12,6 @@ type Props = {
 
 export default class Root extends Component<Props> {
   render() {
-    console.log(ConnectedRouter);
     return (
       <ErrorBoundary>
         <Provider store={this.props.store}>

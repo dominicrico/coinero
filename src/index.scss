@@ -1,0 +1,22 @@
+@import 'https://use.fontawesome.com/releases/v5.0.6/css/all.css';
+@import 'bulma/sass/utilities/initial-variables';
+
+@import './scss/_variables';
+
+@import 'bulma/bulma';
+@import 'bulma-steps-component/bulma-steps';
+
+@import './scss/_typo';
+@import './scss/_images';
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  background: $background;
+}
+
+* {
+  cursor: default;
+  user-select: none;
+}

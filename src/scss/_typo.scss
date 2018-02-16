@@ -1,0 +1,8 @@
+.title,
+.subtitle {
+  text-transform: uppercase;
+
+  &.is-normal {
+    text-transform: none;
+  }
+}

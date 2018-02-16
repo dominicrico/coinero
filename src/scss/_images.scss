@@ -1,0 +1,11 @@
+.image {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+
+  & > img {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

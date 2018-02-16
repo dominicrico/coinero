@@ -1,0 +1,23 @@
+@import '../../scss/_variables';
+
+.message {
+  &.is-error {
+    transition: all 600ms ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 80vw;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: lighten($danger, 22%);
+  }
+
+  &.is-danger .message-body {
+    color: $danger;
+    border-width: 2px;
+
+    strong,
+    i {
+      color: desaturate(darken($danger, 8%), 12%);
+    }
+  }
+}
