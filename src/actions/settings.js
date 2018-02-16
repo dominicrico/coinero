@@ -1,15 +1,15 @@
-// import type {settingsStateType} from '../reducers/counter';
-
-type actionType = {
-  +type: object
-};
+// @flow
+// import type {settingsStateType} from '../reducers/settings';
 
 export const SET_SETTINGS = 'SET_SETTINGS';
 export const GET_SETTINGS = 'GET_SETTINGS';
+export const SETTINGS_ERRORED = 'SETTINGS_ERRORED';
+export const SETTINGS_LOADING = 'SETTINGS_LOADING';
 
-export function setSettings() {
+export function setSettings(settings: object) {
   return {
-    type: SET_SETTINGS
+    type: SET_SETTINGS,
+    settings: settings
   };
 }
 
@@ -19,14 +19,22 @@ export function getSettings() {
   };
 }
 
-export function setNewSettings() {
-  return (dispatch: (action: actionType) => void) => {
-    dispatch(setSettings());
+export function settingsErrored(bool: boolean) {
+  return {
+    type: SETTINGS_ERRORED,
+    error: bool
   };
 }
 
-export function getCurrentSettings() {
-  return (dispatch: (action: actionType) => void) => {
-    dispatch(getSettings());
+export function settingsLoading(bool: boolean) {
+  return {
+    type: SETTINGS_LOADING,
+    loading: bool
+  };
+}
+
+export function getSettingsFromStorage(dispatch) {
+  return distpatch => {
+    dispatch(settingsLoading('true'));
   };
 }

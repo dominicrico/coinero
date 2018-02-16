@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
 import {routerReducer as router} from 'react-router-redux';
-import settings from './settings';
+import {settings, settingsErrored, settingsLoading} from './settings';
 
 const rootReducer = combineReducers({
   settings,
+  settingsErrored,
+  settingsLoading,
   router
 });
 

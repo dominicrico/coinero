@@ -1,12 +1,14 @@
 import React from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
+
 import App from './containers/App';
+import Dashboard from './containers/pages/Dashboard';
 
 export default () => (
   <App>
-    <Router>
+    <HashRouter>
       {/* <Route path="/settings" component={Settings} /> */}
-      <Route path="/" component={App} />
-    </Router>
+      <Route path="/" component={Dashboard} />
+    </HashRouter>
   </App>
 );

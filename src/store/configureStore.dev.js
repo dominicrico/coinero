@@ -1,3 +1,5 @@
+// @flow
+
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import {createHashHistory} from 'history';
@@ -7,9 +9,9 @@ import rootReducer from '../reducers';
 import * as settingsActions from '../actions/settings';
 import type {settingsStateType} from '../reducers/settings';
 
-const history = createHashHistory();
+export const history = createHashHistory();
 
-const configureStore = (initialState?: settingsStateType) => {
+export const configureStore = (initialState?: settingsStateType) => {
   // Redux Configuration
   const middleware = [];
   const enhancers = [];
@@ -62,5 +64,3 @@ const configureStore = (initialState?: settingsStateType) => {
 
   return store;
 };
-
-export default {configureStore, history};
