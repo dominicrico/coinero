@@ -3,8 +3,7 @@
 import {
   SET_SETTINGS,
   GET_SETTINGS,
-  SETTINGS_ERRORED,
-  SETTINGS_LOADING
+  SETTINGS_ERRORED
 } from '../actions/settings';
 
 export type settingsStateType = {
@@ -15,28 +14,24 @@ type actionType = {
   +type: string
 };
 
-export function settings(state: settingsStateType = {}, action: actionType) {
-  if (action.type === GET_SETTINGS) {
-    return state;
-  } else if (action.type === SET_SETTINGS) {
-    return Object.assign({}, state, action.settings);
-  } else {
-    return state;
+export const settings = (state: settingsStateType = {}, action: actionType) => {
+  switch (action.type) {
+    default:
+    case GET_SETTINGS:
+      return state;
+    case SET_SETTINGS:
+      return {
+        ...state,
+        action
+      }
   }
 }
 
-export function settingsErrored(state: boolean = false, action: actionType) {
-  if (action.type === SETTINGS_ERRORED) {
-    return action.error;
-  } else {
-    return state;
-  }
-}
-
-export function settingsLoading(state: boolean = false, action: actionType) {
-  if (action.type === SETTINGS_LOADING) {
-    return action.loading;
-  } else {
-    return state;
+export const settingsError = (state: boolean = false, action: actionType) => {
+  switch (action.type) {
+    case SETTINGS_ERRORED:
+      return action.error
+    default:
+      return state;
   }
 }

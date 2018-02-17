@@ -50,7 +50,10 @@ const createWindow = async () => {
   mainWindow.loadURL(startUrl);
 
   // Open the DevTools if env var is set.
-  if (process.env.ELECTRON_START_URL) mainWindow.webContents.openDevTools();
+  if (
+    process.env.NODE_ENV === 'development' ||
+    process.env.DEBUG_PROD === 'true'
+  )  mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

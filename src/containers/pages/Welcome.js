@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
+import actions from '../../actions';
 // import {Link} from 'react-router-dom';
 // import Home from '../components/Home';
 
 type Props = {};
 
-export default class Welcome extends Component<Props> {
+class Welcome extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,12 +19,12 @@ export default class Welcome extends Component<Props> {
     return (
       <div>
         <section className="section">
-          <container className="has-text-centered">
+          <div className="container has-text-centered">
             <h2 className="title is-2">Welcome to Coinero</h2>
             <h3 className="is-4 subtitle is-normal">
               Cryptocurrency Trading Bot
             </h3>
-          </container>
+          </div>
         </section>
         <section className="section">
           <div className="container">
@@ -107,3 +109,13 @@ export default class Welcome extends Component<Props> {
     );
   }
 }
+
+
+function mapStateToProps(state) {
+  return {
+    settings: actions.getSettings,
+    ...state
+  }
+}
+
+export default connect(mapStateToProps)(Welcome)
